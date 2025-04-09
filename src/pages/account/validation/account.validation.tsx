@@ -1,7 +1,8 @@
 
 import { FormValidationResult } from "@/common/validations";
 import { validateAccountIdField, validateNameField } from "./account-field.validation";
-import { AccountFormErrors, Account } from "./api/account.api.model";
+import { Account } from "../account.model";
+import { AccountFormErrors } from "./account.validation.model";
 
 export const validateForm = (
   newAccount: Account

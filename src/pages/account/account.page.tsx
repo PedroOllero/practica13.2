@@ -1,11 +1,11 @@
 import { AppLayout } from "@/layouts";
 import React from "react";
-import { Account, AccountFormErrors, createEmptyAccountFormErrors, emptyAccount } from "./api/account.api.model";
+import { Account, AccountFormErrors, createEmptyAccountFormErrors, emptyAccount } from "./account.model";
 import { saveAccount } from "./api/account.api";
 import classes from "./account.page.module.css"
 import { useNavigate } from "react-router-dom";
 import { appRoutes } from "@/core/router";
-import { validateForm } from "./account.validation";
+import { validateForm } from "./validation/account.validation";
 
 export const AccountPage: React.FC = () => {
   const [newAccount, setNewAccount] = React.useState<Account>(emptyAccount()

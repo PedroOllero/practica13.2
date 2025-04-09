@@ -1,5 +1,5 @@
 import Axios from "axios";
-import { Account } from "./account.api.model";
+import { Account } from "../account.model";
 
 const url = "http://localhost:3000/account-list";
 
