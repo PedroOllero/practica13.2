@@ -31,6 +31,30 @@
       "balance": 0,
       "lastTransaction": "2025-04-09T10:23:07.508Z",
       "id": "A9fhg_w"
+    },
+    {
+      "iban": "SI86 0100 4090 7536 003",
+      "name": "pedro",
+      "type": "Cuenta Corriente",
+      "balance": 0,
+      "lastTransaction": "2025-04-09T15:18:21.746Z",
+      "id": "Hyz9-Ck"
+    },
+    {
+      "iban": "GR18 9000 679P 3532 12M0 5630 181",
+      "name": "Nueva Cuenta",
+      "type": "Cuenta de Ingreso",
+      "balance": 0,
+      "lastTransaction": "2025-04-09T15:22:52.346Z",
+      "id": "JwiePtB"
+    },
+    {
+      "iban": "AT97 2087 4003 6048 2008",
+      "name": "cuenta",
+      "type": "Cuenta Corriente",
+      "balance": 0,
+      "lastTransaction": "2025-04-09T15:23:11.700Z",
+      "id": "4_JgAjb"
     }
   ],
   "movements": [

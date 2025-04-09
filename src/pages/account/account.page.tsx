@@ -2,15 +2,20 @@ import { AppLayout } from "@/layouts";
 import React from "react";
 import { Account, emptyAccount } from "./api/account.api.model";
 import { saveAccount } from "./api/account.api";
+import classes from "./account.page.module.css"
+import { useNavigate } from "react-router-dom";
+import { appRoutes } from "@/core/router";
 
 export const AccountPage: React.FC = () => {
   const [newAccount, setNewAccount] = React.useState<Account>(emptyAccount()
   );
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
    console.log(newAccount)
    saveAccount(newAccount)
+   navigate(appRoutes.accountList);
   };
 
   const handleFieldChange = (
@@ -24,9 +29,9 @@ export const AccountPage: React.FC = () => {
   return (
     <AppLayout>
       <div>
-        <div>
-          <p>Cuenta Bancaria</p>
-          <form onSubmit={handleSubmit}>
+        <div className={classes.container}>
+          <p className={classes.title}>Cuenta Bancaria</p>
+          <form onSubmit={handleSubmit} className={classes.formContainer}>
             <div>
               <label>Tipo de cuenta</label>
               <select name="type" onChange={handleFieldChange}>
@@ -38,9 +43,9 @@ export const AccountPage: React.FC = () => {
             </div>
             <div>
               <label>Alias</label>
-              <input name="name" onChange={handleFieldChange}></input>
+              <input name="name" className={`${classes.large}`} onChange={handleFieldChange}></input>
             </div>
-            <button type="submit">Guardar</button>
+            <button type="submit" className={classes.button}>Guardar</button>
           </form>
         </div>
       </div>
