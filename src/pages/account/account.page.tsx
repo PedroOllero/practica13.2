@@ -22,10 +22,13 @@ export const AccountPage: React.FC = () => {
 
     const validationResult = validateForm(newAccount);
     setErrors(validationResult.errors);
-    const result = await saveAccount(newAccount);
-    if (result) {
-      navigate(appRoutes.accountList);
+    if(validationResult.succeeded){
+      const result = await saveAccount(newAccount);
+      if (result) {
+        navigate(appRoutes.accountList);
+      }
     }
+    
   };
 
   const handleFieldChange = (
