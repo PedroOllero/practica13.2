@@ -1,6 +1,7 @@
 import { AppLayout } from "@/layouts";
 import React from "react";
 import { Account, emptyAccount } from "./api/account.api.model";
+import { saveAccount } from "./api/account.api";
 
 export const AccountPage: React.FC = () => {
   const [newAccount, setNewAccount] = React.useState<Account>(emptyAccount()
@@ -9,6 +10,7 @@ export const AccountPage: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
    console.log(newAccount)
+   saveAccount(newAccount)
   };
 
   const handleFieldChange = (
@@ -18,8 +20,6 @@ export const AccountPage: React.FC = () => {
   ) => {
     setNewAccount({ ...newAccount, [e.target.name]: e.target.value });
   };
-
-
 
   return (
     <AppLayout>

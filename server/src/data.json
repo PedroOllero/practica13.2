@@ -23,6 +23,14 @@
       "name": "Ahorro",
       "balance": 8500,
       "lastTransaction": "2019-11-15T08:29:04"
+    },
+    {
+      "iban": "GT03 UPF5 9349 9N1W 6V15 C016 1762",
+      "name": "pedrorr",
+      "type": "Cuenta de Ingreso",
+      "balance": 0,
+      "lastTransaction": "2025-04-09T10:23:07.508Z",
+      "id": "A9fhg_w"
     }
   ],
   "movements": [
