@@ -55,6 +55,22 @@
       "balance": 0,
       "lastTransaction": "2025-04-09T15:23:11.700Z",
       "id": "4_JgAjb"
+    },
+    {
+      "iban": "BA98 8096 1339 7970 4001",
+      "name": "Pedro Cuenta",
+      "type": "Cuenta Corriente",
+      "balance": 0,
+      "lastTransaction": "2025-04-09T16:01:12.607Z",
+      "id": "R_6yUue"
+    },
+    {
+      "iban": "LV42 ZHAY 764E 8871 2473 9",
+      "name": "La nueva cuenta",
+      "type": "Cuenta de Ingreso",
+      "balance": 0,
+      "lastTransaction": "2025-04-09T16:04:48.599Z",
+      "id": "OcVwdHm"
     }
   ],
   "movements": [

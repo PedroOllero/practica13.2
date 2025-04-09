@@ -1,21 +1,30 @@
 import { AppLayout } from "@/layouts";
 import React from "react";
-import { Account, emptyAccount } from "./api/account.api.model";
+import { Account, AccountFormErrors, createEmptyAccountFormErrors, emptyAccount } from "./api/account.api.model";
 import { saveAccount } from "./api/account.api";
 import classes from "./account.page.module.css"
 import { useNavigate } from "react-router-dom";
 import { appRoutes } from "@/core/router";
+import { validateForm } from "./account.validation";
 
 export const AccountPage: React.FC = () => {
   const [newAccount, setNewAccount] = React.useState<Account>(emptyAccount()
   );
   const navigate = useNavigate();
+  const [errors, setErrors] = React.useState<AccountFormErrors>(
+    createEmptyAccountFormErrors()
+  );
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+
+  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-   console.log(newAccount)
-   saveAccount(newAccount)
-   navigate(appRoutes.accountList);
+
+    const validationResult = validateForm(newAccount);
+    setErrors(validationResult.errors);
+    const result = await saveAccount(newAccount);
+    if (result) {
+      navigate(appRoutes.accountList);
+    }
   };
 
   const handleFieldChange = (
@@ -40,10 +49,12 @@ export const AccountPage: React.FC = () => {
                 <option id="2">Cuenta de Ahorro</option>
                 <option id="3">Cuenta de Ingreso</option>
               </select>
+              <p className={classes.error}>{errors.type}</p>
             </div>
             <div>
               <label>Alias</label>
               <input name="name" className={`${classes.large}`} onChange={handleFieldChange}></input>
+              <p className={classes.error}>{errors.name}</p>
             </div>
             <button type="submit" className={classes.button}>Guardar</button>
           </form>
