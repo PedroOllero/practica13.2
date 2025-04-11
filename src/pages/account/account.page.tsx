@@ -16,7 +16,6 @@ export const AccountPage: React.FC = () => {
     createEmptyAccountFormErrors()
   );
 
-
   const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -28,7 +27,6 @@ export const AccountPage: React.FC = () => {
         navigate(appRoutes.accountList);
       }
     }
-    
   };
 
   const handleFieldChange = (
